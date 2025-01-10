@@ -6,7 +6,7 @@ const authRoute = require('./routes/authRoute');
 const messageRoute = require('./routes/messageRoute');
 const dbconnect = require('./config/database');
 require('dotenv').config();
-const path = require('path');
+
 
 const {app,server} = require('./config/socket');
 
@@ -18,13 +18,6 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json({ limit: '50mb' })); // You can adjust this value
 app.use(cookieParser());
 
-
-app.use(express.static(path.join(__dirname, 'build')));
-
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 
 
