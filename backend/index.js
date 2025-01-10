@@ -6,6 +6,8 @@ const authRoute = require('./routes/authRoute');
 const messageRoute = require('./routes/messageRoute');
 const dbconnect = require('./config/database');
 require('dotenv').config();
+const path = require('path');
+
 const {app,server} = require('./config/socket');
 
 
